@@ -52,18 +52,25 @@ public class PSP1 extends JFrame {
 		archivosres = new ArrayList<>();
 		btnBuscar.addActionListener(e -> iniciarBusqueda());
 		txtResults.addMouseListener(new MouseAdapter() {
+			
+			
+			
+			
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2) {
 					int caretPosition = txtResults.getCaretPosition();
 					String selectedFile = obtenerselec(caretPosition);
 					if (selectedFile.endsWith(".exe")) {
 						ejecutarexe(selectedFile);
+					
 					}
 				}
 			}
 		});
 	}
 
+	
+	
 	private void iniciarBusqueda() {
 
 		txtResults.setText("");
@@ -79,6 +86,9 @@ public class PSP1 extends JFrame {
 		if (!extension.startsWith(".")) {
 			extension = "." + extension;
 		}
+		
+		
+		
 
 		File[] unidades = File.listRoots();
 
